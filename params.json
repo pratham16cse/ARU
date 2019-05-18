@@ -1,0 +1,182 @@
+{
+    "dataset": {
+        "type": "str",
+        "help": "Name of the dataset",
+        "default": "weekly_sales"},
+    "modelToRun": {
+        "type": "str",
+        "help": "Forecasting model - baseline,aru,adapt,hierarchical,hybrid,attention",
+        "default": "baseline"},
+    "rnnType": {
+        "type": "str",
+        "help": "Type of the RNN cell - lstm, sru, cudnn_lstm",
+        "default": "lstm"},
+    "decoderType": {
+        "type": "str",
+        "help": "Type of the decoder cell - ffnn, rnn",
+        "default": "ffnn"},
+    "isSRUFeat": {
+	"type": "bool",
+        "help": "Use SRU features, boolean",
+        "default": 0},
+    "isLagFeat": {
+	"type": "bool",
+        "help": "Use Lag features, boolean",
+        "default": 0},
+    "isTsId": {
+	"type": "bool",
+        "help": "Use Lag features, boolean",
+        "default": 0},
+    "isPrependZeros": {
+	"type": "bool",
+        "help": "Prepend data with zeros such that entire prediction range is covered, boolean",
+        "default": 0},
+    "encoder_length": {
+        "type": "int",
+        "help": "Encoder Length",
+        "default": 8},
+    "decoder_length": {
+        "type": "int",
+        "help": "Decoder Length",
+        "default": 8},
+    "test_length": {
+        "type": "int",
+        "help": "Length of test sequence",
+        "default": 8},
+    "val_length": {
+        "type": "int",
+        "help": "Length of test sequence",
+        "default": 8},
+    "testFraction": {
+        "type": "float",
+        "help": "Fraction of sequence to use as test sequence",
+        "default": 0},
+    "testView": {
+        "type": "int",
+        "help": "Select test set 1 or test set 2",
+        "default": 1},
+    "isAdapt": {
+        "type": "bool",
+        "help": "Perform local adaptation, boolean",
+        "default": 0},
+    "hidden1": {
+        "type": "int",
+        "help": "No of hidden units in first hidden layer",
+        "default": 64},
+    "hidden2": {
+        "type": "int",
+        "help": "No of hidden units in second hidden layer",
+        "default": 32},
+    "learning_rate": {
+        "type": "float",
+        "help": "Learning rate for adam optimizer",
+        "default": 0.0001},
+    "num_nodes": {
+        "type": "int",
+        "help": "No of hidden units in RNN cell",
+        "default": 20},
+    "num_layers": {
+        "type": "int",
+        "help": "No of Recurrent layers",
+        "default": 1},
+    "lstm_dense_layer_size": {
+        "type": "int",
+        "help": "No of units in dense layer over RNN state.",
+        "default": 5},
+    "batch_size": {
+        "type": "int",
+        "help": "Batch size",
+        "default": 120},
+    "num_iterations": {
+        "type": "int",
+        "help": "No of iterations ",
+        "default": 150},
+    "sru_num_stats": {
+        "type": "int",
+        "help": "No of states in SRU cell",
+        "default": 1500},
+    "recur_dims": {
+        "type": "int",
+        "help": "same as recur_dims of SRU cell",
+        "default": 60},
+    "stepLen": {
+	"type": "int",
+	"help": "No of steps to slide while creating windows",
+	"default": 1},
+    "seed": {
+	"type": "int",
+	"help": "seed for initializations",
+	"default": 12},
+    "numProjs": {
+	"type": "int",
+	"help": "number of projections in ARU",
+	"default": 0},
+    "fullLinear": {
+	"type": "bool",
+	"help": "Use Multivariate linear model in ARU",
+	"default": 0},
+    "numY": {
+	"type": "int",
+	"help": "number of derived y s for ARU",
+	"default":1},
+    "gtVsPredOutputFile": {
+        "type": "str",
+        "help": "Name of ouptut file to store ground-truth and predicted values",
+        "default": "output.pkl"},
+    "isLogNormalised": {
+        "type": "bool",
+        "help": "Is the data log normalized?",
+        "default": 0},
+    "isNormalised": {
+        "type": "bool",
+        "help": "Normalize the data, boolean",
+        "default": 0},
+    "deep_ar_normalize": {
+        "type": "bool",
+        "help": "Normalize Y",
+        "default": 0},
+    "aru_deepar_normalize": {
+        "type": "bool",
+        "help": "Normalize ARU output",
+        "default": 0},
+    "deep_ar_normalize_seq": {
+        "type": "bool",
+        "help": "Normalize Y across full sequence",
+        "default": 0},
+    "aruRegularizer": {
+	"type": "float",
+	"help": "Regularization parameter for ARU",
+	"default": 0.01},
+    "verbose": {
+	"type": "bool",
+	"help": "Is verbose",
+	"default": 0},
+    "is_maru_loss": {
+	"type": "bool",
+	"help": "Use extra loss term for modified ARU",
+	"default": 0},
+    "is_probabilistic_pred": {
+	"type": "bool",
+	"help": "Use extra loss term for modified ARU",
+	"default": 0},
+    "aru_alpha": {
+	"type": "str",
+	"help": "Aging for ARU states",
+	"default": "[0.01, 0.2, 0.9, 1.0]" },
+    "valFrom": {
+	"type": "str",
+	"help": "Pick validation data from train/test",
+	"default": ""},
+    "noFeat": {
+	"type": "bool",
+	"help": "Do not use any external features",
+	"default": ""},
+    "synth_seq_len": {
+	"type": "int",
+	"help": "Sequence length for synthetic data",
+	"default": 100},
+    "synth_num_ts": {
+	"type": "int",
+	"help": "Number of timeseries for synthetic data",
+	"default": 10}
+}
